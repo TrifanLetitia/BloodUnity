@@ -1,0 +1,811 @@
+html * {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    column-gap: 80px;
+    padding: 15px 80px 15px 20px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    border-bottom: solid 1px #dbdbdd;
+    z-index: 1;
+    height: 65px;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    column-gap: 80px;
+}
+
+.logo-nav {
+    height: 40px;
+}
+
+.navbar-col-1,
+.navbar-col-2 {
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 40px;
+    padding: 10px 30px 10px 30px;
+    background-color: #c61d1d;
+    font-weight: bold;
+    text-align: center;
+    line-height: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-col-2 {
+    display: none;
+}
+
+.navbar-account {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    float: left;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    padding-top: 35px;
+}
+
+.right {
+    background-color: rgba(180, 84, 84, 0.334);
+    width: 75%;
+    height: fit-content;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+}
+
+.row-1 {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #c61d1d;
+    padding: 40px 20px 30px 20px;
+    background-color: white;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+}
+
+.right-main {
+    height: fit-content;
+    background-color: #f2f2f2;
+    margin: 30px 30px 30px 30px;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+    padding: 30px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-2 {
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: #4f1a1a;
+}
+
+.textarea {
+    height: 250px;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 30px 30px 30px 30px;
+    font-size: 15px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(61, 26, 26);
+    resize: none;
+    margin-bottom: 30px;
+}
+
+.textarea:focus {
+    outline: none !important;
+    border: 1px solid rgb(134, 91, 91);
+    box-shadow: 0 0 10px rgba(166, 41, 49, 0.411);
+}
+
+button {
+    background-color: #c61d1d;
+    border: 1px solid #c61d1d;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 40px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+.blood-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.blood-type button {
+    background-color: #7c0f0f;
+    border: 1px solid #7b2424;
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0 0 10px rgba(166, 41, 49, 0.411);
+}
+
+.b-type {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0px;
+    color: #c61d1d;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+}
+
+.delete-button-1, .delete-button-2 {
+    cursor: pointer;
+    color: #d61818;
+    margin-left: 10px;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.div-blood-type, .divLocation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.donation-type {
+    margin-bottom: 40px;
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.don-type {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0px;
+    color: #c61d1d;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+}
+
+footer {
+    width: 100%;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    /*background-color: #333;*/
+    background-color: #321e1e;
+    color: white;
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+}
+
+footer b {
+    color: #cd5d5d;
+}
+
+.terms {
+    column-gap: 30px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.terms a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 20px 20px 20px;
+    row-gap: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 25%;
+}
+
+.left img {
+    height: 80px;
+}
+
+.logo-Centru-div {
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: inline-flex;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.centru {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-row-1 {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #e03d3d;
+    font-weight: bold;
+}
+
+.left-row-2 {
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #7e4040;
+}
+
+.menu {
+    height: 650px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    box-shadow: 0px 10px 30px rgba(46, 51, 60, 0.2);
+}
+
+.menuItems {
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    width: inherit;
+}
+
+.items {
+    height: 50px;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.items>i {
+    margin: 0 20px;
+}
+
+.items img {
+    width: 25px;
+    height: 25px;
+}
+
+.items>a {
+    letter-spacing: 2px;
+}
+
+.items a {
+    text-decoration: none;
+    color: black;
+}
+
+.selected {
+    color: #232323;
+    background: linear-gradient(to left, #e6eaec, #faa5ca, #e43f3f);
+}
+
+.donation-type button {
+    width: 250px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    line-height: 42px;
+    border: none;
+    /*background: linear-gradient(0deg, rgb(146, 22, 8) 0%, rgb(184, 15, 15)100%);*/
+    background: linear-gradient(0deg, rgb(206, 85, 69) 0%, rgb(189, 7, 7)100%);
+}
+
+.blood-type button {
+    min-width: 140px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 0px 20px 0px 20px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    line-height: 42px;
+    border: none;
+    /*background: linear-gradient(0deg, rgb(146, 22, 8) 0%, rgb(184, 15, 15)100%);*/
+    background: linear-gradient(0deg, rgb(206, 85, 69) 0%, rgb(189, 7, 7)100%);
+}
+
+.btn-5:hover {
+    color: #f0094a;
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #f0094a;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-5:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+
+.action .profile {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.action .profile img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.group-menu {
+    position: relative;
+}
+
+.action {
+    display: none;
+    position: relative;
+}
+
+.menu-profile {
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    padding: 10px 20px;
+    background: #c4bbbb;
+    width: 250px;
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    z-index: 100;
+    transition: 0.5s;
+}
+
+.action .menu-profile.active {
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu-profile::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: #c4bbbb;
+    transform: rotate(45deg);
+}
+
+.action .menu-profile h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: bold;
+    color: white;
+    line-height: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.action .menu-profile h3 span {
+    font-size: 14px;
+    color: white;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.action .menu-profile ul li {
+    list-style: none;
+    padding: 16px 0;
+    border-top: 1px solid rgb(255 255 255 / 52%);
+    display: flex;
+    align-items: center;
+}
+
+.action .menu-profile ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+    transition: 0s;
+}
+
+.action .menu-profile ul li:hover img {
+    opacity: 1;
+}
+
+.action .menu-profile ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0s;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+ul {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    padding: 0px 10px 10px 10px;
+}
+
+.action .menu-profile ul li:hover a {
+    color: #ff5d94;
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    padding: 10px 10px 10px 10px;
+    position: fixed;
+    bottom: 0;
+    background-color: #5cb85c;
+    width: 50%;
+    left: 25%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    height: 100px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+
+@media only screen and (max-width: 1000px) {
+   .left {
+    width: 40%;
+   }
+
+   .navbar-col-1, .navbar-col-2 {
+    width: 100px;
+   }
+
+   nav {
+    column-gap: 50px;
+   }
+
+   .navbar-links {
+    column-gap: 40px;
+   }
+}
+
+@media only screen and (max-width: 700px) {
+    section {
+        position: relative;
+    }
+
+    .left {
+        display: none;
+        width: auto;
+    }
+
+    nav {
+        padding: 15px 40px 14px 40px;
+    }
+
+    .navbar-col-2 {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .row-1 {
+        font-size: 20px;
+    }
+
+    .action {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        padding: 10px 30px 10px 30px;
+        background-color: rgb(255, 255, 255);
+        position: fixed;
+        width: 100%;
+        border-bottom: solid 1px #dbdbdd;
+        z-index: 1;
+        height: 50px;
+    }
+
+    .logo-nav {
+        height: 30px;
+        background-color: none;
+        padding: 0;
+    }
+
+    .dropbtn img {
+        border: none;
+        cursor: pointer;
+        width: 25px;
+        float: left;
+    }
+
+    button.dropbtn {
+        background: none;
+        border: none;
+        padding: 0;
+        width: 25px;
+        margin: 0;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        /* background: linear-gradient(to right, rgb(178 92 93), rgb(193, 22, 22)); */
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 50px;
+        right: 0;
+        height: fit-content;
+        padding: 20px 20px 20px 20px;
+        min-height: 700px;
+    }
+
+    .dropdown-content a {
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        color: #c61d1d;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: solid 1px rgb(178, 174, 174);
+        margin-bottom: 30px;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .row-1 {
+        margin: 0;
+    }
+
+    .profil {
+        position: relative;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        color: #c61d1d;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: solid 1px rgb(178, 174, 174);
+    }
+
+    .action .menu-profile::before {
+        left: 28px;
+        right: 0px;
+    }
+
+    .menu-profile {
+        right: 0px;
+        left: 10px
+    }
+
+    .donation-type button {
+        min-height: 80px;
+        height: auto;
+        line-height: normal;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+}

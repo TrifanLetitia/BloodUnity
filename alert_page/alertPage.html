@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>&#129656; BloodUnity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="alertPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../home_page/index.html"><img alt="" class="logo-nav"
+                src="../images/bloodunity-high-resolution-logo-transparent (2).png"></a>
+        <div class="navbar-links">
+            <a class="navbar-col-1" href="../home_page/index.html">Home</a>
+            <!--a class="navbar-col-2" href=""><img class="navbar-account" alt=""
+                    src="../images/icons8-account-24.png">Cont</a-->
+            <div class="action">
+                <div class="navbar-col-2" onclick="menuToggle();">
+                    <img class="navbar-account" alt="" src="../images/icons8-account-24.png">Profil
+                </div>
+                <div class="menu-profile" id="menu-profile">
+                    <h3>Nume centru transfuzie<br /><span>Centru de transfuzie</span></h3>
+                    <ul>
+                        <li>
+                            <img src="../images/icons8-account-24.png" /><a href="#">Cont</a>
+                        </li>
+                        <li>
+                            <img src="../images/icons8-settings-32.png" /><a href="#">Editează profilul</a>
+                        </li>
+                        <li>
+                            <img src="../images/icons8-notification-50.png" /><a href="alertPage.html">Trimite un anunț</a>
+                        </li>
+                        <li>
+                            <img src="../images/icons8-sign-out-50.png" /><a href="../user_type_page/user_type.html">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <nav class="mobile-navbar">
+        <a href="../home_page/index.html"><img alt="" class="logo-nav"
+                src="../images/bloodunity-high-resolution-logo-transparent (2).png"></a>
+        <button onclick="dropDownFunction()" class="dropbtn"><img src="../images/PngItem_1784361.png"></button>
+        <div id="myDropdown" class="dropdown-content">
+
+            <a href="../home_page/index.html">Home</a>
+            <a href="../center_profile/center_profile.html">Cont</a>
+            <a href="../anunturi/announcement_page.html">Anunțuri</a>
+            <a href="../alert_page/alertPage.html">Trimite un anunț</a>
+            <a href="../user_type_page/user_type.html">Sign out</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="left">
+            <div class="centru">
+                <div class="logo-Centru-div">
+                    <img class="logo-Centru" alt="" src="../images/hospital_6395229.png">
+                </div>
+                <p class="left-row-1">Nume centrul de transfuzie</p>
+            </div>
+            <div class="menu">
+                <div class="menuItems">
+                    <div class="options">
+                        <div class="items">
+                            <i class="fa fa-bar-chart" aria-hidden="true"><img src="../images/icons8-user-50.png"></i>
+                            <a href="../center_profile/center_profile.html" onclick="setSelected(this)">
+                                <h5>Profil</h5>
+                            </a>
+                        </div>
+                        <div class="items selected">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"><img
+                                    src="../images/writing_1170221.png"></i>
+                            <a href="../alert_page/alertPage.html" onclick="setSelected(this)">
+                                <h5>Trimite un anunț</h5>
+                            </a>
+                        </div>
+                        <div class="items">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"><img
+                                    src="../images/megaphone_12653492.png"></i>
+                            <a href="../anunturi/announcement_page.html" onclick="setSelected(this)">
+                                <h5>Anunțuri</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <i class="fa fa-sign-out" aria-hidden="true"><img src="../images/logout_59399.png"></i>
+                        <a href="../user_type_page/user_type.html" onclick="myFunction()">
+                            <h5>Sign out</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <p class="row-1">Pagină rezervată anunțurilor centrelor de transfuzie</p>
+            <div class="right-main">
+                <p class="row-2">Introduceți anunțul mai jos:</p>
+                <textarea placeholder="Introduceți anunțul..." id="" class="textarea" cols="30" rows="10"></textarea>
+                <p class="row-2">Alegeți grupa / grupele de sânge necesare: </p>
+                <div class="blood-type">
+                    <button class="button btn-5" onclick="appendBloodType(this)">Grupa 0</button>
+                    <button class="button btn-5" onclick="appendBloodType(this)">Grupa A</button>
+                    <button class="button btn-5" onclick="appendBloodType(this)">Grupa B</button>
+                    <button class="button btn-5" onclick="appendBloodType(this)">Grupa AB</button>
+                    <button class="button btn-5" onclick="appendBloodType(this)">Orice grupă</button>
+                </div>
+                <p class="row-2">Grupa selectată:</p>
+                <div class="type-selected" id="type-selected">
+                </div>
+                <p class="row-2">Donarea se poate face: </p>
+                <div class="donation-type">
+                    <button class="button btn-6" onclick="appendType(this)">La centrul local</button>
+                    <button class="button btn-6" onclick="appendType(this)">La toate centrele din țară</button>
+                </div>
+                <div id="donation-type-selected"></div>
+                <button class="button" id="saveButton" onclick="saveAnnouncement()">Trimiteți anunțul</button>
+                
+            </div>
+        </div>
+
+    </section>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+          <div class="modal-header">
+            <p>Anunț trimis cu succes!</p>
+          </div>
+        </div>
+      
+      </div>
+    <footer class="footer">
+        <p>Copyright 2023. All rights reserved | This website is made with <b>&#10084;</b> for <b>people</b>!</p>
+        <div class="terms">
+            <a href="../informations_page/termeni.html">TERMENI ȘI CONDIȚII</a>
+            <a href="../informations_page/politica.html">POLITICA DE CONFIDENȚIALITATE</a>
+        </div>
+    </footer>
+
+</body>
+
+<script src="alertPage.js"></script>
+
+</html>

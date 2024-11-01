@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>&#129656; Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesLogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container" id="form-container-sign-up-container">
+            <form action="#" onsubmit="return signUp()">
+                
+                <h1>Creează un cont</h1>
+                <div class="social-container">
+                    <img src="../images/love-hand-drawn-heart-symbol-outline_35538.png">
+                </div>
+                <input type="text" id="signupName" placeholder="Nume" required/>
+                <input type="text" id="signupPrenume" placeholder="Prenume" required/>
+                <input type="email" id="signupEmail" placeholder="Email" required/>
+                <input type="password" id="signupPassword" placeholder="Parolă" required oninput="validatePassword1()"/>
+
+                <p class="password-validaton-1 hidden" id="password-validation-1">Parola trebuie să conțină cel puțin 8 caractere!</p>
+                <button>Sign up</button>
+                <button class="sign-in-button" onclick="showSignInContainer()">Intră în cont</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container" id="form-container-sign-in-container">
+            <form action="#"  onsubmit="return signIn()">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <img src="../images/love-hand-drawn-heart-symbol-outline_35538.png">
+                </div>
+                <input type="email" id="signinEmail" placeholder="Email" required/>
+                <input type="password" class="password" id="signinPassword" placeholder="Parolă" required oninput="validatePassword2()"/>
+                <p class="password-validaton-2 hidden" id="password-validation-2">Parola trebuie să conțină cel puțin 8 caractere!</p>
+                <p class="account-validation" id="account-validation">Adresa de e-mail sau parola nu este corectă, încearcă din nou. Dacă nu ai un cont, te rugăm să creezi unul.</p>
+                <a href="#">Ai uitat parola?</a>
+                <button>Sign in</button>
+                <button class="new-account" onclick="showSignUpContainer()">Creează un cont nou</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bine ați revenit!</h1>
+                    <p>Pentru a rămâne conectat cu noi, vă rugăm să vă autentificați cu informațiile dvs. personale</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello!</h1>
+                    <p>Introduceți detaliile personale și începeți procesul de donare</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scriptsLogin.js"></script>
+
+</html>

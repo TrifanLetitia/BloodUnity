@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creeare cont centru de donare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CONT NOU</h1>
+    <form id="signupForm" onsubmit="submitForm(event)">
+
+        <label for="lname">Nume centru de donare:</label>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="telNumber">Numărul de telefon:</label>
+        <input type="text" id="telNumber" name="telNumber" pattern="[0-9]{10}" title="Numărul de telefon trebuie să conțină exact 10 cifre" required><br>
+
+        <label for="program">Program(Luni-Vineri): </label>
+        <select name="program" id="program">
+            <option >7:30-13:30</option>
+            <option >08:00-14:00</option>
+            <option >09:00-15:00</option>
+            <option >10:00-16:00</option>
+            <option >10:30-16:30</option>
+            <option >11:00-17:00</option>
+        </select>
+
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="password">Parolă:</label>
+        <input type="password" name="password" id="password" required><br>
+
+        <!-- Dropdown pentru județ -->
+        <label for="judet">Alege județul:</label>
+        <select name="judet" id="judet"></select><br>
+
+        <!-- Dropdown pentru localitate -->
+        <label for="localitate">Alege localitatea:</label>
+        <select name="localitate" id="localitate"></select><br>
+        <input type="submit" value="Creează cont">
+
+        <script src="index.js"></script>
+    </form>
+</body>
+</html>

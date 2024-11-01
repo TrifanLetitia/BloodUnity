@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creeare cont donator</title>
+    <link rel="stylesheet" href="sign-up-form.css">
+</head>
+<body>
+    <h1>CONT NOU</h1>
+    <form id="signupForm" onsubmit="submitForm(event)">
+
+        <label for="lname">Nume:</label>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="fname">Prenume:</label>
+        <input type="text" id="lname" name="lname" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="password">Parolă:</label>
+        <input type="password" name="password" id="password" required><br>
+
+        <label for="grupa">Grupa de sânge: </label>
+        <select name="grupa" id="grupa">
+            <option >Grupa 0</option>
+            <option >Grupa A</option>
+            <option >Grupa B</option>
+            <option >Grupa AB</option>
+        </select>
+
+        <!-- Dropdown pentru județ -->
+        <label for="judet">Alege județul:</label>
+        <select name="judet" id="judet"></select><br>
+
+        <!-- Dropdown pentru localitate -->
+        <label for="localitate">Alege localitatea:</label>
+        <select name="localitate" id="localitate"></select><br>
+
+        <!-- Întrebare despre donarea de sânge -->
+        <div class="radio-group">
+            <label for="donate">Ați mai donat sânge în trecut?</label>
+        <div>
+            <label for="yes">Da</label>
+            <input type="radio" id="yes" name="donate" value="yes" onclick="showLastDonationDate()">
+        </div>
+        <div>
+            <label for="no">Nu</label>
+            <input type="radio" id="no" name="donate" value="no">
+        </div>
+        </div>
+
+
+        <!-- Diviziune pentru data la care ai donat ultima dată -->
+        <div id="lastDonationDate" style="display:none; margin-top: 10px;">
+            <label for="lastDonation">Data ultimei donări:</label>
+            <input type="date" id="lastDonation" name="lastDonation">
+        </div>
+
+        <!-- Întrebare despre greutate -->
+        <div class="radio-group">
+            <label for="kg">Aveți cel puțin 50 de kilograme?</label>
+        <div>
+            <label for="yes-kg">Da</label>
+            <input type="radio" id="yes-kg" name="kg" value="yes" onclick="hideEligibilityMessage()">
+        </div>
+        <div>
+            <label for="no-kg">Nu</label>
+            <input type="radio" id="no-kg" name="kg" value="no" onclick="showEligibilityMessage()">
+        </div>
+        </div>
+        
+        <!-- Mesaj pentru utilizator despre greutate -->
+        <p id="kgMessage" style="color:red; display:none; margin-top: 10px;">
+            Ne cerem scuze, dar nu sunteți eligibil pentru a dona sânge!
+        </p>
+
+        <input type="submit" value="Creează cont">
+
+        <script src="sign-up-form.js"></script>
+    </form>
+</body>
+</html>

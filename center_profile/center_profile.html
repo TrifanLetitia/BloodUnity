@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <title>&#129656; BloodUnity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="center_profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../home_page/index.html"><img alt="" class="logo-nav"
+                src="../images/bloodunity-high-resolution-logo-transparent (2).png"></a>
+        <div class="navbar-links">
+            <a class="navbar-col-1" href="../home_page/index.html">Home</a>
+            <a class="navbar-col-1" href="../informations_page/informatii.html">Informații</a>
+            <div class="action">
+                <div class="navbar-col-2" onclick="menuToggle();">
+                    <img class="navbar-account" alt="" src="../images/icons8-account-24.png">Profil
+                </div>
+                <div class="menu-profile" id="menu-profile">
+                    <h3 class="nume_centru" id="nume_centru">Nume centru transfuzie<br/><span>Centru de transfuzie</span></h3>
+                    <ul>
+                        <li>
+                            <img src="../images/icons8-account-24.png" /><a href="../center_profile/center_profile.html">Cont</a>
+                        </li>
+                        <li>
+                            <img src="../images/icons8-notification-50.png" /><a href="../alert_page/alertPage.html">Trimite un anunț</a>
+                        </li>
+                        <li>
+                            <img src="../images/icons8-sign-out-50.png" /><a href="../user_type_page/user_type.html">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+
+    <nav class="mobile-navbar">
+        <a href="../home_page/index.html"><img alt="" class="logo-nav"
+                src="../images/bloodunity-high-resolution-logo-transparent (2).png"></a>
+        <button onclick="dropDownFunction()" class="dropbtn"><img src="../images/PngItem_1784361.png"></button>
+        <div id="myDropdown" class="dropdown-content">
+
+            <a href="../home_page/index.html">Home</a>
+            <a href="../center_profile/center_profile.html">Cont</a>
+            <a href="../alert_page/alertPage.html">Anunțuri</a>
+            <a href="../user_type_page/user_type.html">Sign out</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="left">
+            <div class="centru">
+                <div class="logo-Centru-div">
+                    <img class="logo-Centru" alt="" src="../images/hospital_6395229.png">
+                </div>
+                <p class="left-row-1" id="nume_centru">Nume centru</p>
+            </div>
+            <div class="menu">
+                <div class="menuItems">
+                    <div class="options">
+                        <div class="items selected">
+                            <i class="fa fa-bar-chart" aria-hidden="true"><img src="../images/icons8-user-50.png"></i>
+                            <a href="" onclick="setSelected(this)">
+                                <h5>Profil</h5>
+                            </a>
+                        </div>
+                        <div class="items">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"><img
+                                    src="../images/writing_1170221.png"></i>
+                            <a href="../alert_page/alertPage.html" onclick="setSelected(this)">
+                                <h5>Trimite un anunț</h5>
+                            </a>
+                        </div>
+                        <div class="items">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"><img
+                                    src="../images/megaphone_12653492.png"></i>
+                            <a href="../anunturi/announcement_page.html" onclick="setSelected(this)">
+                                <h5>Anunțuri</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="items">
+                        <i class="fa fa-sign-out" aria-hidden="true"><img src="../images/logout_59399.png"></i>
+                        <a href="../user_type_page/user_type.html" onclick="myFunction()">
+                            <h5>Sign out</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <p class="right-row-1">Bine ai venit, <span class="prenume" id="prenume">Nume centru</span>! &#128075;</p>
+            <div class="profile-info" id="profile-info">
+                <div class="donor_info">
+                    <h2 class="donor-info-header">Detaliile dvs.</h2>
+                    <button class="edit-profile" onclick="editProfile()">Editează</button>
+                </div>
+                <div>
+                    <p>Nume</p><span class="donor_lastname" id="d_lname"></span>
+                </div>
+                <div>
+                    <p>Email</p><span class="donor_email" id="d_email"></span>
+                </div>
+                <div>
+                    <p>Locație</p><span class="donor_county" id ="d_county"></span>
+                </div>
+                <div>
+                    <p>Program</p><span id="last_donation1" class="last_donation"></span>
+                </div>
+                <div>
+                    <p>Număr de telefon</p><span class="nr_tel" id="nr_tel"></span>
+                </div>
+            </div>
+            <form class="personal-details-edit" id="personal-details-edit" onsubmit="return submitForm()">
+                <fieldset>
+                    <legend class="legend"><span>Detaliile dvs.</span></legend>
+
+                    <div class="FieldList-input">
+                        <div class="Field-module">
+                            <label class="FormLabel-module--label" for="donor_lastname">Nume</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input"><input class="BaseInput-module" aria-required="true"
+                                    required="true" type="text" required id="donor_lastname" name="donor_lastname"
+                                    tabindex="0" value=""></div><svg class="IconWrapper-module--icon"
+                                id="IconWrapper-module--icon-lname" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                focusable="false" data-testid="checkmarkIcon">
+                                <path
+                                    d="M5.938 12.979L5.92 13l-.002-.001V13l-.02-.018L2 9.762 2.653 9l3.19 2.635L13.263 4l.737.684-8.062 8.295z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label" for="email">E-mail</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input"><input class="BaseInput-module" autocomplete="email"
+                                    aria-required="true" required type="text" id="donor_email" name="email"
+                                    tabindex="0"></div><svg class="IconWrapper-module--icon"
+                                id="IconWrapper-module--icon-email" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                focusable="false" data-testid="checkmarkIcon">
+                                <path
+                                    d="M5.938 12.979L5.92 13l-.002-.001V13l-.02-.018L2 9.762 2.653 9l3.19 2.635L13.263 4l.737.684-8.062 8.295z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label__3g_sT"
+                                for="county">Județ</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input">
+                                <select name="judet" id="donor_county" class="BaseInput-module"
+                                    aria-required="true" required></select><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label__3g_sT"
+                                for="adress">Localitate</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input">
+                                <select name="localitate" id="donor_adress" class="BaseInput-module"
+                                    aria-required="true" required></select><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label__3g_sT"
+                                for="adress">Program</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div data-testid="dateInput" class="DateInput-module--wrapper"><select
+                                    class="DateInput-module--input" id="dateInput" name="program" aria-required="true"
+                                    required>
+                                    <option >7:30-13:30</option>
+                                    <option >08:00-14:00</option>
+                                    <option >09:00-15:00</option>
+                                    <option >10:00-16:00</option>
+                                    <option >10:30-16:30</option>
+                                    <option >11:00-17:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label"
+                                for="donor_password">Parolă</label>
+                        </div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input"><input class="BaseInput-module" autocomplete="password"
+                                    aria-required="true" required type="password" id="donor_password" name="password"
+                                    tabindex="0"></div><svg class="IconWrapper-module--icon"
+                                id="IconWrapper-module--icon-password" viewBox="0 0 16 16"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                focusable="false" data-testid="checkmarkIcon">
+                                <path
+                                    d="M5.938 12.979L5.92 13l-.002-.001V13l-.02-.018L2 9.762 2.653 9l3.19 2.635L13.263 4l.737.684-8.062 8.295z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div id="password_message" class="password_message"></div>
+                    </div>
+
+                    <div class="FieldList-input">
+                        <div class="Field-module"><label class="FormLabel-module--label" for="phoneNumber">Număr de
+                                telefon</label></div>
+                        <div class="Field-module--childWrapper">
+                            <div class="Input-module--input"><input class="BaseInput-module" autocomplete="tel"
+                                    aria-required="true" required type="tel" id="phone_number" name="phone_number"
+                                    pattern="[0-9]{10}" title="Numărul de telefon trebuie să conțină exact 10 cifre"
+                                    tabindex="0">
+                            </div><svg class="IconWrapper-module--icon" id="IconWrapper-module--icon-phone"
+                                viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false"
+                                data-testid="checkmarkIcon">
+                                <path
+                                    d="M5.938 12.979L5.92 13l-.002-.001V13l-.02-.018L2 9.762 2.653 9l3.19 2.635L13.263 4l.737.684-8.062 8.295z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div id="phone_message" class="phone_message"></div>
+                    </div>
+                    <div class="SettingsPageTemplate--submitGroup__1r-MV"><button
+                            class="CTA-module--action__3pIxr CTA-module--medium__3kZou CTA-module--primary__1xvty CTA-module--fullWidth__319zq"
+                            data-testid="submitButton"><span>Salvaţi</span></button><a
+                            class="CTA-module--action__3pIxr CTA-module--medium__3kZou CTA-module--secondary__135aY"
+                            href="center_profile.html"><span class="span-anulare">Anulare</span></a></div>
+                </fieldset>
+            </form>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <p>Copyright 2023. All rights reserved | This website is made with <b>&#10084;</b> for <b>people</b>!</p>
+        <div class="terms">
+            <a href="../informations_page/termeni.html">TERMENI ȘI CONDIȚII</a>
+            <a href="../informations_page/politica.html">POLITICA DE CONFIDENȚIALITATE</a>
+        </div>
+    </footer>
+
+</body>
+
+<script src="center_profile.js"></script>
+
+</html>

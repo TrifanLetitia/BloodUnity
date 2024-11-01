@@ -1,0 +1,90 @@
+/* Stilurile pentru pagina ta */
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  text-align: center;
+  color: #c61d1d;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: #c61d1d;
+}
+
+input,
+select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+div.radio-group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajustăm margin-top pentru a coborî textul "Da" și "Nu" */
+div.radio-group label {
+  margin-top: 10px;
+}
+
+/* Stiluri pentru casetele de bifat */
+div.radio-group div {
+  display: flex;
+  align-items: center;
+}
+
+/* Stiluri pentru textul "Da" și "Nu" */
+div.radio-group div label {
+  margin-right: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Resetează margin-top pentru eticheta următoare */
+div.radio-group div label {
+  margin-top: 0;
+}
+
+#kgMessage {
+  color: red;
+  display: none;
+  margin-top: 10px;
+}
+
+#lastDonationDate {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Stiluri pentru ecrane mici (telefoane) */
+@media only screen and (max-width: 600px) {
+  form {
+    padding: 15px;
+  }
+}
